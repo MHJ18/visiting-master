@@ -1,0 +1,27 @@
+@import "components/animations";
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --font-family: "Lato", sans-serif;
+  --color-primary: #7ed56f;
+  --color-secondary: #55c57a;
+  --color-tertiary: #28b485;
+}
+body {
+  overflow: hidden;
+  font-size: 62.5%;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #777;
+  font-family: var(--font-family);
+}
+.App {
+  background-color: #eee;
+}

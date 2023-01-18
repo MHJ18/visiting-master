@@ -1,0 +1,103 @@
+$color-cyan: #888;
+
+.top-header {
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(
+      to right bottom,
+      rgba(11, 20, 11, 0.7),
+      rgba(8, 19, 12, 0.6)
+    ),
+    no-repeat top/cover url(../../public/hero.jpg);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+}
+
+.logo > img {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  max-width: 4.5rem;
+  max-height: fit-content;
+}
+
+.heading-main {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #eee;
+  &-container {
+    margin: 0 auto;
+    text-transform: uppercase;
+  }
+  & .heading__h1 {
+    letter-spacing: 2.8rem;
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    animation-name: moveright;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+  }
+
+  & .heading-h2 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    letter-spacing: 1.5rem;
+    font-size: 2rem;
+    display: block;
+    animation-name: moveleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+  }
+}
+
+.button-header {
+  position: relative;
+  z-index: 4;
+  cursor: pointer;
+  font-family: var(--font-family);
+  padding: 1.2rem 2.4rem;
+  border-radius: 4rem;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  font-size: 1.2rem;
+  color: $color-cyan;
+  transform: translate(100%, 100%);
+  text-align: center;
+  transition: all 0.3s;
+  animation-name: moveup;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
+  animation-delay: 0.3s;
+  animation-timing-function: ease-out;
+  &:hover {
+    box-sizing: border-box;
+    transition: transform 0.5s;
+    transform: translate(100%, 90%);
+
+    /* border-radius: 4rem; */
+    box-shadow: 0px 2px 14px rgb(255, 255, 255, 0.5);
+    &::after {
+      opacity: 0;
+      transform: scale(1.5);
+    }
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    background-color: #eee;
+    z-index: -1;
+    transition: all 1s;
+  }
+}
