@@ -1,0 +1,29 @@
+$color-font:transparent;
+$color-primary: rgba(26, 102, 121, 0.911);
+  $color-secondary: rgba(180, 14, 69, 0.733);
+  $color-tertiary: #28b485;
+.main-section{
+    margin-bottom: 10rem;
+    margin-top: 2.4rem;
+}
+.container-heading{
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+
+& .heading__secondary-1{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $color-primary;
+    transition: all 0.5s ease-in-out;
+    
+    &:hover{
+        box-shadow: 1px 2px 20px rgba($color: ($color-primary), $alpha: 0.1);
+        background:linear-gradient(90deg,$color-primary,$color-secondary,$color-tertiary);
+         background-clip: text;
+         -webkit-background-clip: text;
+    }
+}
+}

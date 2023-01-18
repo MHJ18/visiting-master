@@ -3,8 +3,8 @@ import "./header.scss";
 
 const Header = () => {
   return (
-    <div>
-      <div className="container">
+    <>
+      <header className="container">
         <div className="top-header">
           <div className="logo">
             <img
@@ -23,8 +23,8 @@ const Header = () => {
             </button>
           </div>
         </div>
-      </div>
-    </div>
+      </header>
+    </>
   );
 };
 
