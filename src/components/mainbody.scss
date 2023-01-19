@@ -75,7 +75,7 @@ $color-tertiary: #28b485;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
 
     & .heading__secondary-1 {
         font-size: 1.5rem;
@@ -95,17 +95,13 @@ $color-tertiary: #28b485;
 
 .section--image {
 
-    // display: flex;
+
     & .section-position {
         vertical-align: middle;
         @include boxShadow();
-
-    }
-
-    & img {
         border-radius: 4px;
         max-width: 100%;
-
+        z-index: 10;
     }
 
     & .image-1 {
@@ -113,12 +109,6 @@ $color-tertiary: #28b485;
         width: 50%;
         position: relative;
         top: 0px;
-
-        &:hover {
-            z-index: 10;
-            transform: scale(1.1);
-            box-shadow: 0px -4px 20px rgba($color: #888, $alpha: 0.4);
-        }
 
     }
 
@@ -128,26 +118,20 @@ $color-tertiary: #28b485;
         top: 40px;
         left: -50px;
         width: 50%;
-
-        &:hover {
-            z-index: 10;
-            box-shadow: 0px -4px 20px rgba($color: #888, $alpha: 0.4);
-            transform: scale(1.1);
-        }
     }
 
     & .image-3 {
         display: inline-block;
         position: relative;
-        transform: translateY(-90%);
         left: 50px;
-        top: 100px;
+        top: -35px;
         width: 50%;
+    }
 
-        &:hover {
-            z-index: 10;
-            box-shadow: 0px -4px 20px rgba($color: #888, $alpha: 0.4);
-            transform: scale(1.1) translateY(-80%);
-        }
+    &:hover .section-position:not(:hover) {
+        box-shadow: 0px -4px 20px rgba($color: #888, $alpha: 0.4);
+        transform: scale(0.9);
+        z-index: -10;
+
     }
 }
