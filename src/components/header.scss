@@ -9,7 +9,8 @@ $color-cyan: #888;
       rgba(8, 19, 12, 0.6)
     ),
     no-repeat top/cover url(../../public/hero.jpg);
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100% );
+  
 }
 
 .logo > img {
