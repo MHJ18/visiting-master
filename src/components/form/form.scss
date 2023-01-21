@@ -1,0 +1,27 @@
+.Form__section {
+    margin: 0 auto;
+    display: block;
+    width: 50%;
+    margin-top: 5rem;
+    border-radius: 10px;
+    height: 20rem;
+    background-color: white;
+    background: linear-gradient(to right bottom, rgba(13, 13, 13, 0.5), rgba(23, 23, 23, 0.3)), no-repeat top/cover url(../../../public/nat-10.jpg);
+
+    &-container {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+
+        background-color: rgba(0, 217, 255, 0.568);
+        height: 100%;
+
+
+    }
+
+    &-form {
+        height: 100%;
+        width: 100%;
+
+    }
+}

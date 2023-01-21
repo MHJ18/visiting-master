@@ -145,7 +145,7 @@
      text-decoration: none;
 
      &:hover {
-         color: darken($color: white, $amount: 10);
+         color: lighten($color: white, $amount: 40);
          transform: translateY(-2px);
          border-bottom: none;
      }
