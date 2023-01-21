@@ -14,7 +14,9 @@ function App() {
       <Cards />
       <Featured />
       <Stories />
-      <Form />
+      <div className="form">
+        <Form />
+      </div>
     </div>
   );
 }
