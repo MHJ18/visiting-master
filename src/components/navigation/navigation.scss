@@ -1,0 +1,16 @@
+.menu-options-list {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+
+    & .options a {
+        text-decoration: none;
+        display: inline-block;
+        color: #222;
+        font-size: 1rem;
+    }
+}
+
+.backgrund-menu {
+    background: linear-gradient(to left bottom);
+}

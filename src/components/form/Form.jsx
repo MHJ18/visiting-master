@@ -8,23 +8,25 @@ const Form = () => {
         <div className="form__section-form">
           <form action="">
             <input type="text" placeholder="Full name" required />
-            <label className="form__section-form-label" htmlFor="text">
+            <label className="form-label" htmlFor="text">
               Full name
             </label>
             <input type="email" placeholder="Email address" required />
-            <label className="form__section-form-label" htmlFor="email">
+            <label className="form-label" htmlFor="email">
               Email address
             </label>
             <div className="checkbox-container">
               <div className="checkboxes">
-                <input type="radio" name="check" id="checkbox" />
-                <label className="checkbox" htmlFor="checkbox">
+                <input type="radio" name="check" id="checkbox1" />
+                <label className="checkbox" htmlFor="checkbox1">
+                  <span className="checkbox-custom"></span>
                   Small tour group
                 </label>
               </div>
               <div className="checkboxes">
-                <input type="radio" name="check" id="checkbox" />
-                <label className="checkbox" htmlFor="checkbox">
+                <input type="radio" name="check" id="checkbox2" />
+                <label className="checkbox" htmlFor="checkbox2">
+                  <span className="checkbox-custom"></span>
                   Small tour group
                 </label>
               </div>
