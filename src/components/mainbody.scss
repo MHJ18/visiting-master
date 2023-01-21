@@ -109,7 +109,13 @@ $color-tertiary: #28b485;
         width: 50%;
         position: relative;
         top: 0px;
+        transition: all 0.3s ease-in;
 
+        &:hover {
+            z-index: 50;
+            transform: scale(1.13);
+
+        }
     }
 
     & .image-2 {
@@ -118,6 +124,13 @@ $color-tertiary: #28b485;
         top: 40px;
         left: -50px;
         width: 50%;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            z-index: 50;
+            transform: scale(1.13);
+
+        }
     }
 
     & .image-3 {
@@ -126,12 +139,14 @@ $color-tertiary: #28b485;
         left: 50px;
         top: -35px;
         width: 50%;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            z-index: 50;
+            transform: scale(1.13);
+
+        }
     }
 
-    &:hover .section-position:not(:hover) {
-        box-shadow: 0px -4px 20px rgba($color: #888, $alpha: 0.4);
-        transform: scale(0.9);
-        z-index: -10;
 
-    }
 }

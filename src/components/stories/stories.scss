@@ -1,19 +1,38 @@
- $color-primary: rgba(26, 102, 121, 0.911);
+ $color-primary: white;
  $color-secondary: rgba(180, 14, 69, 0.733);
  $color-tertiary: #2aa37b;
 
  .stories__featured {
      &-main {
+         width: 100%;
+         height: 100%;
+         position: relative;
          display: flex;
          flex-direction: column;
          align-items: center;
          gap: 3rem;
-         margin-bottom: 10rem;
+
+         z-index: 20;
+         overflow: hidden;
+         backface-visibility: hidden;
 
      }
 
+     &-video {
+         position: absolute;
+         border-radius: 10px;
+
+         //  max-width: 100%;
+         //  max-height: 100%;
+         z-index: -1;
+         filter: brightness(50%);
+         object-fit: cover;
+         //  opacity: 0.5;
+     }
+
+
      &-heading {
-         margin-top: 3rem;
+         margin-top: 2rem;
          font-size: 1.5rem;
          text-transform: uppercase;
          font-weight: 600;
@@ -29,11 +48,12 @@
      }
 
      &-section {
+         //  opacity: 0.9;
          width: 40rem;
          height: 13rem;
          color: #555;
          display: block;
-         background-color: white;
+         background-color: rgba(255, 255, 255, 0.788);
          box-shadow: 2px 4px 15px rgba(136, 136, 136, 0.411);
          transform: skewX(-12deg);
          border-radius: 7px;
@@ -54,9 +74,41 @@
      }
 
      &-card1 {
+         position: relative;
+
+
+         &:hover &-caption {
+             z-index: 2;
+             opacity: 1;
+             transform: translateY(40%);
+         }
+
+         &:hover &-img {
+             transform: scale(0.9);
+             filter: blur(1px) brightness(80%);
+
+         }
 
          &-heading {
              width: 70%;
+         }
+
+         &-caption {
+             transition: all 0.5s ease-in-out;
+             position: absolute;
+             font-size: 1.2rem;
+             text-align: center;
+             top: 0;
+             left: 0;
+             transform: translate(0, 100%);
+             box-decoration-break: clone;
+             padding: 0.3rem;
+             font-weight: 500;
+             color: white;
+             opacity: 0;
+             text-transform: uppercase;
+             backface-visibility: hidden;
+
          }
 
          &-heading>h3 {
@@ -67,13 +119,35 @@
 
          }
 
-         &-heading>p {}
 
          &-img {
+             transition: all 0.5s ease-in-out;
              border-radius: 50%;
              width: 8rem;
              height: 8rem;
+             transform: scale(1.04);
 
          }
      }
+ }
+
+ .button-section:link,
+ .button-section:visited {
+     border: none;
+     padding: 0rem 0 0.4rem 0;
+     border-bottom: 1px solid #eee;
+     font-size: 0.9rem;
+     color: white;
+     cursor: pointer;
+     display: inline-block;
+     transition: all 0.5s ease-in-out;
+     margin-bottom: 2rem;
+     text-decoration: none;
+
+     &:hover {
+         color: darken($color: white, $amount: 10);
+         transform: translateY(-2px);
+         border-bottom: none;
+     }
+
  }
