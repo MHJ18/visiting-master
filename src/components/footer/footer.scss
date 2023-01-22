@@ -74,12 +74,14 @@
 }
 
 @keyframes logo {
-    0% {
+
+    0%,
+    100% {
 
         filter: invert(-3) saturate(0.5);
     }
 
-    100% {
+    70% {
 
         filter: brightness(100%) invert(240);
 

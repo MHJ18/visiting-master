@@ -11,6 +11,7 @@ import Stories from "./components/stories/Stories";
 function App() {
   return (
     <div className="App">
+      <Navigation />
       <Header />
       <MainBody />
       <Cards />
@@ -20,7 +21,6 @@ function App() {
         <Form />
       </div>
       <Footer />
-      <Navigation />
     </div>
   );
 }
