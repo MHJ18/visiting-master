@@ -21,6 +21,10 @@
             text-decoration: none;
             color: inherit;
             display: inline-block;
+
+            &:hover {
+                color: white;
+            }
         }
 
     }

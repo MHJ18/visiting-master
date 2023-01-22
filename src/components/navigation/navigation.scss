@@ -4,7 +4,7 @@
     top: 0;
     right: 0;
     z-index: 1500;
-    transition: all 0.3s 0.3s ease-in-out;
+    transition: all 0.4s 0.2s ease-in-out;
     opacity: 0;
     width: 0;
     overflow: hidden;
@@ -28,10 +28,10 @@
             font-size: 1.7rem;
             font-weight: 500;
             text-transform: uppercase;
-            transition: all 0.3s ease-in;
+            transition: all 0.4s ease-in-out;
             border-radius: 10px;
             background: linear-gradient(140deg, transparent 0 50%, white 50% 100%);
-            background-size: 295%;
+            background-size: 260%;
 
             &:hover {
 
@@ -58,7 +58,7 @@
     box-shadow: 2px 4px 12px rgba(85, 85, 85, 0.288);
     background: radial-gradient(rgb(125, 134, 49), rgb(21, 87, 99));
     z-index: 100;
-    transition: all 0.7s cubic-bezier(.86, .23, .22, .22);
+    transition: all 0.7s ease-in;
     // transform: scale(65);
 
 }
@@ -85,15 +85,14 @@ input[type=checkbox] {
 
 .radio {
     &-none {
-        &:checked~label.radio-label .svg-1 {
 
-            opacity: 1;
-            // z-index: -2;
-        }
+
 
         &:checked~div.backgrund-menu {
-            transform: scale(100);
+            transform: scale(90);
             z-index: 100;
+
+
         }
 
         &:checked~nav.menu-options {

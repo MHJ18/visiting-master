@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./feature.scss";
 
-const Featured = () => {
+const Featured = ({ first }) => {
   return (
     <div>
       <figure className="section__featured-main">
@@ -25,7 +25,12 @@ const Featured = () => {
               <div className="section__featured-card-back">
                 <p className="section__featured-card-back-tag">ONLY</p>
                 <p className="section__featured-card-back-price">$329</p>
-                <button className="section__featured-card-back-button">
+                <button
+                  onClick={() => {
+                    first.current.style.display = "block";
+                  }}
+                  className="section__featured-card-back-button"
+                >
                   Book now!
                 </button>
               </div>
@@ -49,7 +54,10 @@ const Featured = () => {
               <div className="section__featured-card-back">
                 <p className="section__featured-card-back-tag">ONLY</p>
                 <p className="section__featured-card-back-price">$539</p>
-                <button className="section__featured-card-back-button">
+                <button
+                  onClick={() => (first.current.style.display = "block")}
+                  className="section__featured-card-back-button"
+                >
                   Book now!
                 </button>
               </div>
@@ -73,7 +81,10 @@ const Featured = () => {
               <div className="section__featured-card-back">
                 <p className="section__featured-card-back-tag">ONLY</p>
                 <p className="section__featured-card-back-price">$630</p>
-                <button className="section__featured-card-back-button">
+                <button
+                  onClick={() => (first.current.style.display = "block")}
+                  className="section__featured-card-back-button"
+                >
                   Book now!
                 </button>
               </div>

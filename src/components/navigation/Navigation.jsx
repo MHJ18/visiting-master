@@ -1,13 +1,17 @@
 import React, { useRef, useState } from "react";
 import "./navigation.scss";
-const Navigation = () => {
-  const first = useRef();
-  const [classs, setclasss] = useState(true);
+const Navigation = ({ first }) => {
   return (
     <>
       <div className="navigation">
         <input className="radio-none" type="checkbox" name="" id="radio" />
-        <label className="radio-label" htmlFor="radio">
+        <label
+          className="radio-label"
+          onClick={() => {
+            first.current.style.display = "none";
+          }}
+          htmlFor="radio"
+        >
           <span className="icon"></span>
           {/* <svg
             className="svg-1"
@@ -48,19 +52,19 @@ const Navigation = () => {
         <nav className="menu-options">
           <ul className="menu-options-list">
             <li className="options">
-              <a href="/">About Natous</a>
+              <a href="#about">About Natous</a>
             </li>
             <li className="options">
-              <a href="/">Your benefits</a>
+              <a href="#benefits">Your benefits</a>
             </li>
             <li className="options">
-              <a href="/">Popular tours</a>
+              <a href="#tours">Popular tours</a>
             </li>
             <li className="options">
-              <a href="/">Stories</a>
+              <a href="#stories">Stories</a>
             </li>
             <li className="options">
-              <a href="/">Book now</a>
+              <a href="#book">Book now</a>
             </li>
           </ul>
         </nav>
