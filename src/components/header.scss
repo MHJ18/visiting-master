@@ -1,49 +1,95 @@
 $color-cyan: #888;
 
-.top-header {
-  position: relative;
-  height: 95vh;
-  background: linear-gradient(
-      to right bottom,
-      rgba(11, 20, 11, 0.7),
-      rgba(8, 19, 12, 0.6)
-    ),
-    no-repeat top/cover url(../../public/hero.jpg);
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100% );
-  
+//responsive design
+@mixin responsive($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width:42em) {
+      @content
+    }
+  }
+
+
+
+
 }
 
-.logo > img {
+.top-header {
+  @include responsive(phone) {
+    height: 85vh;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  }
+
+  position: relative;
+  height: 95vh;
+  background: linear-gradient(to right bottom,
+    rgba(11, 20, 11, 0.7),
+    rgba(8, 19, 12, 0.6)),
+  no-repeat top/cover url(../../public/hero.jpg);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+
+}
+
+.logo>img {
+  @include responsive(phone) {
+    max-width: 4.5rem;
+  }
+
   position: absolute;
   top: 30px;
-  left: 40px;
+  left: 30px;
   max-width: 4.5rem;
   max-height: fit-content;
 }
 
 .heading-main {
+  @include responsive(phone) {
+    // position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // color: #eee;
+  }
+
   backface-visibility: hidden;
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #eee;
+
   &-container {
     margin: 0 auto;
     text-transform: uppercase;
   }
+
   & .heading__h1 {
+    @include responsive(phone) {
+      letter-spacing: 1rem;
+      font-size: 4rem;
+      display: block;
+      font-weight: 700;
+    }
+
     letter-spacing: 2.8rem;
     display: block;
     font-size: 6rem;
-    font-weight: 400;
+    font-weight: 500;
     animation-name: moveright;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
   }
 
 }
+
 .heading-h2 {
+  @include responsive(phone) {
+    font-size: 1.7rem;
+    letter-spacing: 0.3rem;
+    margin-top: 0.2rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
   text-transform: uppercase;
   font-family: var(--font-family);
   font-weight: 600;
@@ -56,6 +102,13 @@ $color-cyan: #888;
 }
 
 .button-header {
+  @include responsive(phone) {
+    font-size: 1.6rem;
+    padding: 2rem 2rem;
+    font-weight: 500;
+    transform: translate(26%, 170%);
+  }
+
   position: relative;
   z-index: 4;
   cursor: pointer;
@@ -76,18 +129,27 @@ $color-cyan: #888;
   animation-fill-mode: backwards;
   animation-delay: 0.3s;
   animation-timing-function: ease-out;
+
   &:hover {
+    @include responsive(phone) {
+
+
+      transform: translate(26%, 150%);
+    }
+
     box-sizing: border-box;
     transition: transform 0.5s;
     transform: translate(100%, 90%);
 
     /* border-radius: 4rem; */
     box-shadow: 0px 2px 14px rgb(255, 255, 255, 0.5);
+
     &::after {
       opacity: 0;
       transform: scale(1.5);
     }
   }
+
   &::after {
     content: "";
     display: inline-block;

@@ -2,7 +2,7 @@ import React from "react";
 import "./form.scss";
 const Form = () => {
   return (
-    <section className="Form__section">
+    <section className="Form__section" id="book">
       <div className="Form__section-container">
         <h2 className="Form__section-heading">START BOOKING NOW!</h2>
         <div className="form__section-form">

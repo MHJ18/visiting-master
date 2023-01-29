@@ -33,10 +33,7 @@ const Popup = ({ first }) => {
                 quibusdam nostrum! Eaque ullam quasi eligendi officiis dolores
                 velit debitis quo vitae eveniet? Corporis, aliquid accusantium.
               </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
-                culpa provident laudantium rem minima nemo veniam est officiis
-              </p>
+
               <button className="btn">Book now</button>
             </div>
           </div>

@@ -1,5 +1,14 @@
 @import "components/animations";
 
+@mixin responsive($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width:42em) {
+      @content
+    }
+  }
+
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -18,13 +27,24 @@
   --color-tertiary: #28b485;
 }
 
+html {
+  @include responsive(phone) {
+    font-size: 55%;
+
+
+  }
+}
+
 body {
-  scroll-behavior: smooth;
-  font-size: 62.5%;
+
+
   line-height: 1.7;
   font-weight: 400;
   color: #777;
   font-family: var(--font-family);
+  scroll-behavior: smooth;
+
+
 
 
 }
@@ -40,7 +60,6 @@ body {
 
 .form {
   background-color: #309674;
-  // width: 80%;
 
   margin: 0 auto;
   padding: 1rem 0;

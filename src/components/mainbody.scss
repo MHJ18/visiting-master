@@ -7,17 +7,37 @@ $color-tertiary: #28b485;
     box-shadow: 0px 5px 15px rgba($color: #555, $alpha: 0.4);
 }
 
+@mixin responsive($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width:42em) {
+            @content
+        }
+    }
+
+
+
+
+}
+
 .main-section {
     margin-bottom: 10rem;
     margin-top: 2.4rem;
+
+    @include responsive(phone) {
+        margin-bottom: 8rem;
+        margin-top: 4rem;
+    }
 
     & .section--button {
 
         &:link,
         &:visited {
+            @include responsive(phone) {
+                font-size: 1.3rem;
+            }
+
             // max-width: 16%;
             text-decoration: none;
-
             display: inline-block;
             color: rgb(24, 177, 24);
             margin-bottom: 0.4rem;
@@ -37,26 +57,47 @@ $color-tertiary: #28b485;
     }
 
     & .section-1 {
+        @include responsive(phone) {
+            gap: 1rem;
+            // max-width: 80vw;
+            // max-width: 90vw;
+        }
+
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
         gap: 2rem;
-        max-width: 80vw;
+        max-width: 82vw;
 
         & .section--about {
             display: flex;
             flex-direction: column;
+            // justify-content: center;
 
             & .section--heading {
+                @include responsive(phone) {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+
+                }
+
                 font-size: 1.2rem;
                 word-wrap: break-word;
                 margin-bottom: 0.4rem;
                 text-transform: uppercase;
                 font-weight: 700;
-                flex: 1;
+
 
                 &+p {
+                    @include responsive(phone) {
+                        font-size: 1rem;
+                        margin-bottom: 2rem;
+                        overflow-wrap: break-word;
+                        max-width: 90%;
+
+                    }
+
                     // max-width:50% ;
                     display: inline-block;
                     font-size: 0.8rem;
@@ -71,14 +112,23 @@ $color-tertiary: #28b485;
 }
 
 .container-heading {
+    @include responsive(phone) {
+
+        flex: 0;
+    }
+
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 4rem;
-    flex: 1;
+
 
     & .heading__secondary-1 {
+        @include responsive(phone) {
+            font-size: 1.7rem;
+        }
+
         font-size: 1.5rem;
         text-transform: uppercase;
         font-weight: 600;
@@ -96,9 +146,10 @@ $color-tertiary: #28b485;
 
 .section--image {
 
+    @include responsive(phone) {}
 
     & .section-position {
-        vertical-align: middle;
+        // vertical-align: middle;
         @include boxShadow();
         border-radius: 4px;
         max-width: 100%;
@@ -110,6 +161,12 @@ $color-tertiary: #28b485;
         width: 50%;
         position: relative;
         top: 0px;
+
+        @include responsive(phone) {
+            width: 100%;
+            // top: 10%;
+        }
+
         transition: all 0.3s ease-in;
 
         &:hover {
@@ -127,6 +184,12 @@ $color-tertiary: #28b485;
         width: 50%;
         transition: all 0.3s ease-in;
 
+        @include responsive(phone) {
+            width: auto;
+            top: 2px;
+            left: 0px;
+        }
+
         &:hover {
             z-index: 50;
             transform: scale(1.13);
@@ -141,6 +204,12 @@ $color-tertiary: #28b485;
         top: -35px;
         width: 50%;
         transition: all 0.3s ease-in;
+
+        @include responsive(phone) {
+            width: auto;
+            top: 3px;
+            left: 0px;
+        }
 
         &:hover {
             z-index: 50;

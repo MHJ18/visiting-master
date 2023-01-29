@@ -5,9 +5,16 @@ const Footer = () => {
     <div>
       <footer className="footer__main">
         <main className="footer__main-section">
-          <div className="footer__main-section-img">
+          <picture className="footer__main-section-img">
+            <source
+              srcset="logo-g.png 3x ,nat-3.jpg 2x"
+              media="(max-width:42em)"
+            />
             <img src="logo-g.png" alt="" />
-          </div>
+          </picture>
+          {/* <div className="footer__main-section-img">
+            <img src="logo-g.png" alt="" />
+          </div> */}
           <div className="footer__main-info">
             <div className="footer__main-info-top">
               <a href="/" className="footer__main-info-p">

@@ -2,6 +2,15 @@
  $color-secondary: rgba(180, 14, 69, 0.733);
  $color-tertiary: #2aa37b;
 
+ @mixin responsive($breakpoint) {
+     @if $breakpoint==phone {
+         @media (max-width:42em) {
+             @content
+         }
+     }
+
+ }
+
  .stories__featured {
      &-main {
          width: 100%;
@@ -48,7 +57,14 @@
      }
 
      &-section {
+
          //  opacity: 0.9;
+
+         @include responsive(phone) {
+             width: 35rem;
+             height: 14rem;
+         }
+
          width: 40rem;
          height: 13rem;
          color: #555;
@@ -70,7 +86,11 @@
          gap: 1rem;
          transform: skewX(12deg);
 
-
+         @include responsive(phone) {
+             font-size: 0.9rem;
+             margin-top: 1rem;
+             gap: 1.3rem;
+         }
      }
 
      &-card1 {
@@ -90,13 +110,13 @@
          }
 
          &-heading {
-             width: 70%;
+             width: 100%;
          }
 
          &-caption {
              transition: all 0.5s ease-in-out;
              position: absolute;
-             font-size: 1.2rem;
+             font-size: 1.3rem;
              text-align: center;
              top: 0;
              left: 0;
@@ -112,10 +132,21 @@
          }
 
          &-heading>h3 {
+
+             @include responsive(phone) {
+                 font-size: 1.32em;
+             }
+
              font-weight: 600;
              text-transform: uppercase;
              padding-bottom: 0.3rem;
 
+             &+p {
+                 @include responsive(phone) {
+                     font-size: 0.9rem;
+                 }
+
+             }
 
          }
 
@@ -133,6 +164,10 @@
 
  .button-section:link,
  .button-section:visited {
+     @include responsive(phone) {
+         font-size: 1rem;
+     }
+
      border: none;
      padding: 0rem 0 0.4rem 0;
      border-bottom: 1px solid #eee;

@@ -4,7 +4,7 @@ import "./feature.scss";
 const Featured = ({ first }) => {
   return (
     <div>
-      <figure className="section__featured-main">
+      <figure className="section__featured-main" id="stories">
         <div className="section__featured">
           <h2 className="section__featured-heading">most popular tours</h2>
           <div className="section__featured-cards">
@@ -20,7 +20,9 @@ const Featured = ({ first }) => {
                 <p className="section__featured-parr">Up to 30 people</p>
                 <p className="section__featured-parr">2 tour guides</p>
                 <p className="section__featured-parr">Sleep in cozy hostels</p>
-                <p className="section__featured-parr">Difficulty: very easy</p>
+                <p className="section__featured-parr last">
+                  Difficulty: very easy
+                </p>
               </div>
               <div className="section__featured-card-back">
                 <p className="section__featured-card-back-tag">ONLY</p>
@@ -49,7 +51,9 @@ const Featured = ({ first }) => {
                 <p className="section__featured-parr">
                   Sleep in provided tents
                 </p>
-                <p className="section__featured-parr">Difficulty: medium</p>
+                <p className="section__featured-parr last">
+                  Difficulty: medium
+                </p>
               </div>
               <div className="section__featured-card-back">
                 <p className="section__featured-card-back-tag">ONLY</p>
@@ -62,7 +66,7 @@ const Featured = ({ first }) => {
                 </button>
               </div>
             </div>
-            <div className="section__featured-card">
+            <div className="section__featured-card section__featured-card-3 ">
               <div className="section__featured-card-top">
                 <div className="section__featured-img-3"></div>
                 <h3 className="section__featured-imgheading-3">
@@ -76,7 +80,7 @@ const Featured = ({ first }) => {
                 <p className="section__featured-parr">
                   Sleep in provided tents
                 </p>
-                <p className="section__featured-parr">Difficulty: hard</p>
+                <p className="section__featured-parr last">Difficulty: hard</p>
               </div>
               <div className="section__featured-card-back">
                 <p className="section__featured-card-back-tag">ONLY</p>

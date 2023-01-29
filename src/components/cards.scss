@@ -4,29 +4,60 @@ $color-tertiary: #28b485;
     box-shadow: 0px 5px 15px rgba($color:#eee, $alpha: 0.4);
 }
 
+@mixin responsive($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width:42em) {
+            @content
+        }
+    }
+
+}
+
 .section__container-1 {
+    @include responsive(phone) {
+        gap: 2rem;
+        flex-wrap: wrap;
+
+    }
+
     display: flex;
     margin-top: -4rem;
-
     padding: 12rem 0;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 5rem;
     height: 100%;
     clip-path: polygon(0 15%, 100% 0, 100% 80%, 0 100%);
     background: linear-gradient(to right bottom,
-            rgba(35, 63, 35, 0.7),
-            rgba(10, 19, 13, 0.7)), no-repeat top/cover url(../../public/nat-4.jpg);
+        rgba(35, 63, 35, 0.7),
+        rgba(10, 19, 13, 0.7)),
+    no-repeat top/cover url(../../public/nat-4.jpg);
+
     // padding-bottom: 10rem;
 
 
+
+
+
+    @include responsive(phone) {
+        clip-path: polygon(0 12%, 100% 0, 100% 87%, 0 100%);
+        padding: 10rem 0;
+    }
+
     & .section__ {
         &card-1 {
+            @include responsive(phone) {
+                max-width: 30rem;
+
+                justify-content: center;
+                align-items: center;
+            }
+
             background-color: rgba(245, 245, 245);
             display: flex;
             opacity: 0.8;
             color: #555;
-
+            max-width: 13rem;
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -36,6 +67,11 @@ $color-tertiary: #28b485;
             transition: all 0.3s ease-in-out;
 
             &:hover {
+                @include responsive(phone) {
+
+                    transform: translateY(-1rem) scale(1.04);
+                }
+
                 transform: translateY(-2rem) scale(1.04);
                 @include boxShadow();
 
@@ -53,6 +89,12 @@ $color-tertiary: #28b485;
         }
 
         &heading {
+            @include responsive(phone) {
+                font-size: 0.9rem;
+                padding: 0.4rem 0;
+
+            }
+
             font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
@@ -61,6 +103,23 @@ $color-tertiary: #28b485;
         }
 
         &detail {
+
+            @include responsive(phone) {
+                font-size: 0.9rem;
+                padding: 0 1rem 0 0.7rem;
+                word-wrap: normal;
+                padding: 0 2rem;
+                word-break: normal;
+
+                // text-overflow: ellipsis;
+
+                /* Needed to make it work */
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
             padding: 0 1.2rem 0 1rem;
             text-align: center;
             word-wrap: normal;

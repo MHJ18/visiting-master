@@ -1,13 +1,22 @@
 import React, { useRef, useState } from "react";
 import "./navigation.scss";
 const Navigation = ({ first }) => {
+  const [check, setcheck] = useState(false);
+  const second = useRef();
   return (
     <>
       <div className="navigation">
-        <input className="radio-none" type="checkbox" name="" id="radio" />
+        <input
+          className="radio-none"
+          type="checkbox"
+          name=""
+          id="radio"
+          checked={check}
+        />
         <label
           className="radio-label"
           onClick={() => {
+            setcheck(!check);
             first.current.style.display = "none";
           }}
           htmlFor="radio"
@@ -50,7 +59,12 @@ const Navigation = ({ first }) => {
         <div className="backgrund-menu"></div>
 
         <nav className="menu-options">
-          <ul className="menu-options-list">
+          <ul
+            className="menu-options-list"
+            onClick={(e) => {
+              setcheck(!check);
+            }}
+          >
             <li className="options">
               <a href="#about">About Natous</a>
             </li>

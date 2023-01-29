@@ -6,6 +6,15 @@ $color-tertiary: #2aa37b;
 $color-grad1:rgb(255, 185, 0, .6);
 $color-grad2:rgb(255, 119, 48, .4);
 
+@mixin responsive($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width:42em) {
+            @content
+        }
+    }
+
+}
+
 .section__featured {
     display: flex;
     flex-direction: column;
@@ -17,13 +26,25 @@ $color-grad2:rgb(255, 119, 48, .4);
     }
 
     &-cards {
+        @include responsive(phone) {
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         display: flex;
         flex-direction: row;
-        gap: 5rem;
+        gap: 4rem;
+
 
     }
 
     &-heading {
+        @include responsive(phone) {
+            font-size: 2rem;
+            margin-bottom: 5rem;
+        }
+
         font-size: 1.5rem;
         text-transform: uppercase;
         font-weight: 600;
@@ -39,13 +60,22 @@ $color-grad2:rgb(255, 119, 48, .4);
     }
 
     &-parr {
+        @include responsive(phone) {
+            font-size: 1rem;
+            border-bottom: none;
+
+        }
+
 
         font-size: 0.9rem;
         font-weight: 500;
         // margin-bottom: 1rem;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Poppins',
+        sans-serif;
         border-bottom: 1px solid #888;
         padding-bottom: 0.4rem;
+
+
     }
 
     @mixin image() {
@@ -57,7 +87,16 @@ $color-grad2:rgb(255, 119, 48, .4);
             overflow-wrap: break-word;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
+            @include responsive(phone) {
+                height: 15rem;
+                border-radius: 10px 10px 0 0;
+                width: 100%;
+                overflow-wrap: break-word;
+                clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+            }
         }
+
     }
 
     &-img-1 {
@@ -99,6 +138,13 @@ $color-grad2:rgb(255, 119, 48, .4);
             left: 120px;
             font-weight: 500;
             display: inline-block;
+
+            @include responsive(phone) {
+                top: 92px;
+                left: 60px;
+                font-weight: 600;
+
+            }
         }
     }
 
@@ -171,10 +217,15 @@ $color-grad2:rgb(255, 119, 48, .4);
     }
 
     &-card {
+        @include responsive(phone) {
+            margin: 1rem 0;
+            width: 18rem;
+        }
+
         border-radius: 10px;
         width: 18rem;
         position: relative;
-        perspective: 150rem;
+        perspective: 1rem;
         -webkit-perspective: 150rem;
         margin: 5rem 0;
 
@@ -203,6 +254,10 @@ $color-grad2:rgb(255, 119, 48, .4);
 
 
             &-tag {
+                @include responsive(phone) {
+                    font-size: 1.4rem;
+                }
+
                 font-size: 1.2rem;
                 color: #555;
                 font-weight: 600;
@@ -210,12 +265,23 @@ $color-grad2:rgb(255, 119, 48, .4);
             }
 
             &-price {
+                @include responsive(phone) {
+                    font-size: 4rem;
+                    color: rgb(14,
+                            75,
+                            83);
+                    margin-top: 0;
+                }
 
                 font-size: 3rem;
                 font-weight: 500;
             }
 
             &-button {
+                @include responsive(phone) {
+                    font-size: 1.4rem;
+                }
+
                 display: inline-block;
                 padding: 1rem 2rem;
                 font-weight: 600;
@@ -272,6 +338,7 @@ $color-grad2:rgb(255, 119, 48, .4);
         }
 
         &-top {
+
             box-shadow: 0px 2px 15px rgba($color: #666, $alpha: 0.3);
             backface-visibility: hidden;
             display: inline-flex;
@@ -284,6 +351,10 @@ $color-grad2:rgb(255, 119, 48, .4);
             border-radius: 10px;
             transition: all 0.7s ease-in-out;
 
+            @include responsive(phone) {
+                gap: 1.4rem;
+                height: 34rem;
+            }
         }
 
         &:hover &-top {
@@ -296,6 +367,11 @@ $color-grad2:rgb(255, 119, 48, .4);
     }
 
     &-button {
+        @include responsive(phone) {
+            font-size: 1.5rem;
+            margin-top: 4rem;
+        }
+
         display: inline-block;
         padding: 1rem 2rem;
         font-weight: 600;
@@ -328,15 +404,16 @@ $color-grad2:rgb(255, 119, 48, .4);
             color: transparent;
             border: none;
             background-color: #eee;
-            z-index: -11;
-            transition: all 0.4s;
+            z-index: -1;
+            transition: all 0.4s ease-in-out;
         }
 
         &:hover {
             color: #eee;
             box-sizing: border-box;
-            transition: transform 0.5s;
+
             transform: translate(0, -3px);
+
             /* border-radius: 4rem; */
             box-shadow: 0px 2px 14px rgb(255, 255, 255, 0.5);
 
@@ -348,4 +425,8 @@ $color-grad2:rgb(255, 119, 48, .4);
         }
 
     }
+}
+
+.last {
+    padding-bottom: 1rem;
 }
